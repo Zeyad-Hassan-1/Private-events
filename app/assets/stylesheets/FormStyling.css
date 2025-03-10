@@ -1,0 +1,122 @@
+/* General Form Styles */
+form {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #3f51b5;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.field label {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.field input[type="email"],
+.field input[type="password"],
+.field input[type="text"],
+.field input[type="submit"] {
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.field input[type="email"]:focus,
+.field input[type="password"]:focus,
+.field input[type="text"]:focus {
+    border-color: #3f51b5;
+    outline: none;
+    box-shadow: 0 0 5px rgba(63, 81, 181, 0.3);
+}
+
+.field input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 5px;
+}
+
+.actions input[type="submit"] {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.actions input[type="submit"]:hover {
+    background-color: #283593;
+}
+
+/* Error Message Styling */
+#error_explanation {
+    color: #d32f2f;
+    background-color: #ffebee;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+#error_explanation ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#error_explanation ul li {
+    margin: 5px 0;
+}
+
+#error_explanation h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Links Styling */
+form + a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #3f51b5;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+form + a:hover {
+    color: #283593;
+}
+
+/* Device-Specific Responsive Design */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    .actions input[type="submit"] {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}

@@ -8,3 +8,106 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f7;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header Section (Greeting and Links) */
+body > p {
+    text-align: center;
+    margin: 10px auto;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Header Links (Sign In, Sign Up, Sign Out) */
+body > p a,
+body > p form button {
+    margin: 0 10px;
+    color: #3f51b5;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+body > p a:hover,
+body > p form button:hover {
+    background-color: #e8eaf6;
+    color: #283593;
+}
+/* Main Content Styling */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Links Within Yield Area */
+main a {
+    color: #3f51b5;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+main a:hover {
+    color: #283593;
+}
+
+/* Button for Sign Out */
+form button {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: white;
+    background-color: #3f51b5;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #283593;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body > p {
+        font-size: 1rem;
+    }
+
+    body > p a,
+    body > p form button {
+        font-size: 0.9rem;
+        padding: 5px 8px;
+    }
+
+    main {
+        padding: 15px;
+    }
+}
