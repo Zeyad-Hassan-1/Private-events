@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_09_221152) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_10_220801) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -23,22 +23,30 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_09_221152) do
   end
 
   create_table "user_events", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.bigint "event_id", null: false
+    t.bigint "creator_id", null: false
+    t.bigint "attender_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["attender_id"], name: "index_user_events_on_attender_id"
+    t.index ["creator_id"], name: "index_user_events_on_creator_id"
     t.index ["event_id"], name: "index_user_events_on_event_id"
-    t.index ["user_id"], name: "index_user_events_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "email"
-    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "user_events", "events"
-  add_foreign_key "user_events", "users"
+  add_foreign_key "user_events", "users", column: "attender_id"
+  add_foreign_key "user_events", "users", column: "creator_id"
 end
