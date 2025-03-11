@@ -1,0 +1,94 @@
+.wrapper {
+  background: #171c24;
+  width: 100%;
+  padding: 15px 30px;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  background: #171c24;
+}
+
+.wrapper .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin: 0 8px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background: #3A3B3C;
+}
+
+.logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.wrapper .logo {
+  float: left;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background: #3A3B3C;
+}
+
+/* Add margin to main content to prevent overlap with fixed navbar */
+body {
+  margin-top: 80px;
+  background: #f4f4f4;
+  min-height: 100vh;
+}
+
+/* Style for notices and alerts */
+.notice, .alert {
+  padding: 15px;
+  margin: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.notice {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}

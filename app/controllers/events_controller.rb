@@ -4,6 +4,16 @@ class EventsController < ApplicationController
     @events = Event.includes(:creators).all
   end
 
+  def past
+    @events = Event.includes(:creators).past
+    render :index
+  end
+
+  def upcoming
+    @events = Event.includes(:creators).upcoming
+    render :index
+  end
+
   def show
     @event = Event.find(params[:id])
   end

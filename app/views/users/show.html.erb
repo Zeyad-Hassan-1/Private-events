@@ -1,0 +1,40 @@
+<div class="profile-container">
+  <h1>Profile</h1>
+  
+  <div class="user-info">
+    <h2>User Details</h2>
+    <p>Email: <%= current_user.email %></p>
+  </div>
+
+  <div class="events-section">
+    <h2>Created Events</h2>
+    <% if current_user.created_events.any? %>
+      <ul>
+        <% current_user.created_events.each do |event| %>
+          <li>
+            <%= link_to event.title, event_path(event) %>
+            <span><%= event.date.strftime("%B %d, %Y") if event.date %></span>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No events created yet.</p>
+    <% end %>
+  </div>
+
+  <div class="events-section">
+    <h2>Events I'm Attending</h2>
+    <% if current_user.attended_events.any? %>
+      <ul>
+        <% current_user.attended_events.each do |event| %>
+          <li>
+            <%= link_to event.title, event_path(event) %>
+            <span><%= event.date.strftime("%B %d, %Y") if event.date %></span>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>Not attending any events yet.</p>
+    <% end %>
+  </div>
+</div>
