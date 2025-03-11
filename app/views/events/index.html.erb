@@ -1,1 +1,30 @@
-<h1>Test</h1>
+<div class="ag-format-container">
+  <div class="ag-courses_box">
+    <% @events.each do |event|%>
+        <div class="ag-courses_item">
+        <%= link_to event_path(event) , class: "ag-courses-item_link" do%>
+            <div class="ag-courses-item_bg"></div>
+
+            <div class="ag-courses-item_title">
+                <%= event.title %>
+            </div>
+
+            <div class="ag-courses-item_date-box">
+            Start:
+            <span class="ag-courses-item_date">
+                <%= event.date %>
+            </span>
+            </div>
+            <div>
+                <p>
+                    <strong>Created by:</strong>
+                     <%= event.creators.first.name %>
+                </p>
+            </div>
+        <% end %>
+        <%= button_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button' %>
+        </div>
+        <% end %>
+  </div>
+</div>
+<%= link_to "Create New Event","/events/new"%>

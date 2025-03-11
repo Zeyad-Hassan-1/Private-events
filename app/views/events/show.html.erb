@@ -1,0 +1,19 @@
+<div class="event_container">
+    <div class="event_title">
+        <%= @event.title %>
+    </div>
+
+    <div class="event_date-box">
+    Start:
+    <span class="event_date">
+        <%= @event.date %>
+    </span>
+    </div>
+    <div>
+        <p>
+            <strong>Created by:</strong>
+            <%= @event.creators.first %>
+        </p>
+    </div>
+</div>
+<%= button_to 'Delete', event_path(@event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button-event' %>
