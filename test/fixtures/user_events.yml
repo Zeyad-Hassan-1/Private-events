@@ -1,6 +1,9 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 user_event_one:
-  creator_id: <%= users(:user_one).id %>
-  attender_id: <%= users(:user_two).id %>
-  event_id: <%= events(:event_one).id %>
+  event: event_one
+  creator: user_one
+  attender: user_one
+
+user_event_two:
+  event: event_two
+  creator: user_two
+  attender: user_one
