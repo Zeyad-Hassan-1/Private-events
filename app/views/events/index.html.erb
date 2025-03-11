@@ -22,7 +22,9 @@
                 </p>
             </div>
         <% end %>
+        <%if event.creators.first == current_user%>
         <%= button_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button' %>
+        <% end %>
         </div>
         <% end %>
   </div>

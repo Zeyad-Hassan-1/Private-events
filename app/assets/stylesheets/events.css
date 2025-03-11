@@ -188,3 +188,9 @@ button.delete-button {
   right: 0;
   bottom: 0;
 }
+
+button.back-button-event {
+  position: fixed;
+  top: 0;
+  left: 0;
+}

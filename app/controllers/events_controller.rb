@@ -24,8 +24,21 @@ class EventsController < ApplicationController
 
   def destroy
     @event = Event.find(params[:id])
-    @event.destroy
+    if @event.creators.first == current_user
+      @event.destroy
+    end
     redirect_to "/events"
+  end
+
+  def attend
+    @event = Event.find(params[:id])
+    user_event = UserEvent.find_or_create_by(event: @event, attender: current_user, creator: @event.creators.first)
+
+    if user_event.save
+      redirect_to @event, notice: "You are now attending this event."
+    else
+      redirect_to @event, alert: "Failed to attend the event: #{user_event.errors.full_messages.join(", ")}"
+    end
   end
 
   private

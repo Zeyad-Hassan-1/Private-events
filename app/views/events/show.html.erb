@@ -12,8 +12,26 @@
     <div>
         <p>
             <strong>Created by:</strong>
-            <%= @event.creators.first %>
+            <%= @event.creators.first.name %>
         </p>
     </div>
 </div>
-<%= button_to 'Delete', event_path(@event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button-event' %>
+<%if @event.creators.first == current_user%>
+    <%= button_to 'Delete', event_path(@event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button-event' %>
+<% end %>
+<!-- زر الحضور -->
+
+<% if @event.creators.first !=  current_user%>
+    <%= button_to "Attend Event", attend_event_path(@event), method: :post %>
+<% end %>
+
+
+<!-- قائمة الحاضرين -->
+<h2>Attenders</h2>
+<ul>
+  <% @event.attenders.each do |attender| %>
+    <li><%= attender.name %></li>
+  <% end %>
+</ul>
+
+<%= button_to 'Back to events', "/events", method: :get, class: 'back-button-event' %>
