@@ -4,7 +4,7 @@
 ![Rails](https://img.shields.io/badge/Rails-7.1.2-red)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-A Ruby on Rails application that allows users to create events and manage user signups. Users can create events and send invitations to other users. Events take place at a specific date and location. This project is part of [The Odin Project's](https://www.theodinproject.com/lessons/ruby-on-rails-private-events) Ruby on Rails curriculum.
+A Ruby-on-Rails application that allows users to create events and manage user signups. Users can create events and send invitations to other users. Events take place at a specific date and location. This project is part of [The Odin Project's](https://www.theodinproject.com/lessons/ruby-on-rails-private-events) Ruby on Rails curriculum.
 
 ## Features
 
